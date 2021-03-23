@@ -99,7 +99,7 @@ impl<T: Id> Node<T> {
 	/// Checks if the node object has the given term as key.
 	///
 	/// # Example
-	/// ```
+	/// ```ignore
 	/// # use json_ld::syntax::{Term, Keyword};
 	/// # let node: json_ld::Node = json_ld::Node::new();
 	/// 

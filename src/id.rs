@@ -23,7 +23,7 @@ use crate::json_ld::{
 /// one possibility is to use a `enum` type as identifier.
 /// This can be done throught the use of the [`Lexicon`](`crate::json_ld::Lexicon`) type along with the
 /// [`iref-enum`](https://crates.io/crates/iref-enum) crate:
-/// ```
+/// ```ignore
 /// use iref_enum::*;
 /// use json_ld::Lexicon;
 ///

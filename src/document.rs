@@ -67,7 +67,7 @@ pub trait Document<T: Id> {
 	/// ressources. It returns a boxed [`Future`](`std::future::Future`) to the result.
 	///
 	/// # Example
-	/// ```
+	/// ```ignore
 	/// # fn main() -> Result<(), json_ld::Error> {
 	/// use async_std::task;
 	/// use json_ld::{Document, JsonContext, NoLoader};
@@ -188,7 +188,7 @@ impl<T: Id> Document<T> for JsonValue {
 /// base URL.
 ///
 /// # Example
-/// ```
+/// ```ignore
 /// use static_iref::*;
 ///
 /// use async_std::task;

@@ -75,7 +75,7 @@ impl<V: Vocab> PartialEq<V> for Lexicon<V> {
 /// `enum` type. It uses the [`iref-enum`](https://crates.io/crates/iref-enum)
 /// crate to automatically derive the convertion of the
 /// `Vocab` type from/into IRIs.
-/// ```
+/// ```ignore
 /// use iref_enum::*;
 /// use json_ld::Lexicon;
 ///
