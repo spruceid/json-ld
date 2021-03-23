@@ -1,5 +1,5 @@
 use iref::IriBuf;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Indexed,
 	Object

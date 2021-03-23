@@ -1,4 +1,4 @@
-use crate::Direction;
+use crate::json_ld::Direction;
 use langtag::{
 	LanguageTag,
 	LanguageTagBuf

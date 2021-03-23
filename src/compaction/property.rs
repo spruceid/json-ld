@@ -1,5 +1,5 @@
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	ContextMut,
 	Indexed,

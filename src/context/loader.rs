@@ -1,6 +1,6 @@
 use futures::future::BoxFuture;
 use iref::{Iri, IriBuf};
-use crate::Error;
+use crate::json_ld::Error;
 
 pub struct RemoteContext<C> {
 	url: IriBuf,

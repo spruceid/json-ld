@@ -16,7 +16,7 @@ use langtag::{
 	LanguageTagBuf
 };
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	ProcessingMode,
 	Error,
 	Direction,
@@ -152,7 +152,7 @@ pub trait ContextMut<T: Id = IriBuf>: Context<T> {
 
 /// Trait for types that are or wrap a mutable context.
 /// 
-/// This trait is used by the [`Document::compact`](crate::Document::compact)
+/// This trait is used by the [`Document::compact`](crate::json_ld::Document::compact)
 /// function to accept either a context or a wrapper to a context.
 pub trait ContextMutProxy<T: Id = IriBuf> {
 	type Target: ContextMut<T>;

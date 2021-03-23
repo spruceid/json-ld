@@ -9,7 +9,7 @@ use iref::{
 	IriBuf
 };
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Error,
 	Id,
 	Indexed,
@@ -101,7 +101,7 @@ pub trait Document<T: Id> {
 		}.boxed()
 	}
 
-	fn compact_with<'a, C: ContextMutProxy<T> + Send + Sync + crate::util::AsJson, L: Send + Sync + Loader>(&'a self, base_url: Option<Iri<'a>>, context: &'a C, loader: &'a mut L, options: compaction::Options) -> BoxFuture<'a, Result<JsonValue, Error>> where
+	fn compact_with<'a, C: ContextMutProxy<T> + Send + Sync + crate::json_ld::util::AsJson, L: Send + Sync + Loader>(&'a self, base_url: Option<Iri<'a>>, context: &'a C, loader: &'a mut L, options: compaction::Options) -> BoxFuture<'a, Result<JsonValue, Error>> where
 		C::Target: Send + Sync + Default,
 		<C::Target as Context<T>>::LocalContext: Send + Sync + From<L::Output> + From<Self::LocalContext>,
 		L::Output: Into<Self::LocalContext>,
@@ -124,14 +124,14 @@ pub trait Document<T: Id> {
 				JsonValue::Array(items) => {
 					let mut map = json::object::Object::new();
 					if !items.is_empty() {
-						use crate::{
+						use crate::json_ld::{
 							Lenient,
 							syntax::{
 								Term,
 								Keyword
 							}
 						};
-						let key = crate::compaction::compact_iri(context.clone(), &Lenient::Ok(Term::Keyword(Keyword::Graph)), true, false, options.into())?;
+						let key = crate::json_ld::compaction::compact_iri(context.clone(), &Lenient::Ok(Term::Keyword(Keyword::Graph)), true, false, options.into())?;
 						map.insert(key.as_str().unwrap(), JsonValue::Array(items));
 					}
 
@@ -149,7 +149,7 @@ pub trait Document<T: Id> {
 		}.boxed()
 	}
 
-	fn compact<'a, C: ContextMutProxy<T> + Send + Sync + crate::util::AsJson, L: Send + Sync + Loader>(&'a self, context: &'a C, loader: &'a mut L) -> BoxFuture<'a, Result<JsonValue, Error>> where
+	fn compact<'a, C: ContextMutProxy<T> + Send + Sync + crate::json_ld::util::AsJson, L: Send + Sync + Loader>(&'a self, context: &'a C, loader: &'a mut L) -> BoxFuture<'a, Result<JsonValue, Error>> where
 		C::Target: Send + Sync + Default,	
 		<C::Target as Context<T>>::LocalContext: Send + Sync + From<L::Output> + From<Self::LocalContext>,
 		L::Output: Into<Self::LocalContext>,
@@ -183,7 +183,7 @@ impl<T: Id> Document<T> for JsonValue {
 /// Remote JSON-LD document.
 ///
 /// Represent a document located at a given base URL.
-/// This is the result of loading a document with [`Loader::load`](`crate::Loader::load`).
+/// This is the result of loading a document with [`Loader::load`](`crate::json_ld::Loader::load`).
 /// It is a simple wrapper that [`Deref`] to the underlying document while remembering its
 /// base URL.
 ///

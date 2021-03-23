@@ -2,7 +2,7 @@ use std::hash::{Hash, Hasher};
 use std::ops::{Deref, DerefMut};
 use std::convert::{TryFrom, TryInto};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	syntax::Keyword,
 	util::AsJson
 };

@@ -1,7 +1,7 @@
 use std::convert::TryFrom;
 use std::fmt;
 use json::JsonValue;
-use crate::util::AsJson;
+use crate::json_ld::util::AsJson;
 
 /// Internationalized string direction.
 ///

@@ -1,7 +1,7 @@
 use std::hash::Hash;
 use iref::{Iri, IriBuf, AsIri};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	syntax::TermLike,
 	util
 };
@@ -21,7 +21,7 @@ use crate::{
 /// # Using `enum` types
 /// If you know in advance which IRIs will be used by your implementation,
 /// one possibility is to use a `enum` type as identifier.
-/// This can be done throught the use of the [`Lexicon`](`crate::Lexicon`) type along with the
+/// This can be done throught the use of the [`Lexicon`](`crate::json_ld::Lexicon`) type along with the
 /// [`iref-enum`](https://crates.io/crates/iref-enum) crate:
 /// ```
 /// use iref_enum::*;

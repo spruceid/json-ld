@@ -1,7 +1,7 @@
 use std::fmt;
 use std::convert::TryFrom;
 use json::JsonValue;
-use crate::util;
+use crate::json_ld::util;
 
 /// Blank node identifier.
 ///

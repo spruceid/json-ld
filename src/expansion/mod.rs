@@ -13,7 +13,7 @@ use std::collections::HashSet;
 use futures::Future;
 use iref::{Iri, IriBuf};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	ProcessingMode,
 	Error,
 	Id,
@@ -55,8 +55,8 @@ impl From<Options> for ProcessingOptions {
 	}
 }
 
-impl From<crate::compaction::Options> for Options {
-	fn from(options: crate::compaction::Options) -> Options {
+impl From<crate::json_ld::compaction::Options> for Options {
+	fn from(options: crate::json_ld::compaction::Options) -> Options {
 		Options {
 			processing_mode: options.processing_mode,
 			ordered: options.ordered,

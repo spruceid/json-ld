@@ -1,6 +1,6 @@
 use std::convert::TryFrom;
 use iref::{Iri, IriRef};
-use crate::{
+use crate::json_ld::{
 	BlankId,
 	Id,
 	Lenient,

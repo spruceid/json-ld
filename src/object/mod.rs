@@ -9,7 +9,7 @@ use std::fmt;
 use iref::{Iri, IriBuf};
 use langtag::LanguageTag;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Lenient,
 	Reference,

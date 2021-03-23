@@ -7,7 +7,7 @@ use iref::{
 	AsIri
 };
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Lenient,
 	Reference,

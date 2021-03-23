@@ -2,7 +2,7 @@ use std::fmt;
 use std::hash::Hash;
 use std::convert::TryFrom;
 use iref::{Iri, IriBuf, AsIri};
-use crate::{
+use crate::json_ld::{
 	Id,
 	Reference,
 	ToReference,

@@ -1,6 +1,6 @@
 use std::borrow::Borrow;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Context,
 	Indexed,

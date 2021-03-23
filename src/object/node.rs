@@ -4,7 +4,7 @@ use std::convert::TryFrom;
 use std::borrow::Borrow;
 use iref::{Iri, IriBuf};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Reference,
 	ToReference,

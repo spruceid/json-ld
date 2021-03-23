@@ -10,7 +10,7 @@ use langtag::{
 };
 use mown::Mown;
 use std::sync::Arc;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Nullable,
 	Direction,

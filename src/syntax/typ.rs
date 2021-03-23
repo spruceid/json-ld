@@ -2,7 +2,7 @@ use std::fmt;
 use std::convert::TryFrom;
 use iref::Iri;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	Reference,
 	util

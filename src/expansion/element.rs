@@ -2,7 +2,7 @@ use mown::Mown;
 use futures::future::{BoxFuture, FutureExt};
 use iref::Iri;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Error,
 	ErrorCode,
 	Id,
@@ -20,7 +20,7 @@ use crate::{
 		Term
 	}
 };
-use crate::util::as_array;
+use crate::json_ld::util::as_array;
 use super::{
 	Expanded,
 	Entry,

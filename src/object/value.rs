@@ -2,7 +2,7 @@ use std::hash::{Hash, Hasher};
 use iref::IriBuf;
 use langtag::LanguageTag;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	object,
 	LangString,

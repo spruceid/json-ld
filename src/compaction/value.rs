@@ -1,5 +1,5 @@
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	ContextMut,
 	Value,
@@ -97,7 +97,7 @@ pub async fn compact_indexed_value_with<T: Sync + Send + Id, C: ContextMut<T>, L
 
 	match value {
 		Value::Literal(lit, ty) => {
-			use crate::object::value::Literal;
+			use crate::json_ld::object::value::Literal;
 			if ty.as_ref().map(|t| Type::Ref(t)) == type_mapping && remove_index {
 				match lit {
 					Literal::Null => return Ok(JsonValue::Null),

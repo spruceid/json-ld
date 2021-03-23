@@ -2,7 +2,7 @@ use std::convert::{TryFrom, TryInto};
 use std::fmt;
 use json::JsonValue;
 use iref::Iri;
-use crate::{
+use crate::json_ld::{
 	syntax::TermLike,
 	util
 };

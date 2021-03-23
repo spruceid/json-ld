@@ -1,6 +1,6 @@
 use langtag::LanguageTagBuf;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Error,
 	ErrorCode,
 	Direction,

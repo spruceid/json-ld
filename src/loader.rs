@@ -5,7 +5,7 @@ use std::io::{Read, BufReader};
 use futures::future::{FutureExt, BoxFuture};
 use iref::{Iri, IriBuf};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Error,
 	ErrorCode,
 	RemoteDocument,

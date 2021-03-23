@@ -7,8 +7,8 @@ use futures::future::{BoxFuture, FutureExt};
 use json::{JsonValue, object::Object as JsonObject};
 use langtag::LanguageTagBuf;
 use iref::{Iri, IriBuf, IriRef};
-use crate::util::as_array;
-use crate::{
+use crate::json_ld::util::as_array;
+use crate::json_ld::{
 	ProcessingMode,
 	Error,
 	ErrorCode,

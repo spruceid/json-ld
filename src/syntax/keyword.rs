@@ -1,7 +1,7 @@
 use std::convert::TryFrom;
 use std::fmt;
 use json::JsonValue;
-use crate::util;
+use crate::json_ld::util;
 
 /// JSON-LD keywords.
 #[derive(Clone, Copy, PartialEq, Eq, PartialOrd, Ord, Hash, Debug)]

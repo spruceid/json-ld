@@ -4,7 +4,7 @@ use mown::Mown;
 use iref::Iri;
 use langtag::LanguageTagBuf;
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Error,
 	ErrorCode,
 	ProcessingMode,
@@ -27,7 +27,7 @@ use crate::{
 		ContainerType
 	}
 };
-use crate::util::as_array;
+use crate::json_ld::util::as_array;
 use super::{Expanded, Entry, Options, expand_element, expand_literal, expand_iri, filter_top_level_item};
 
 /// Convert a lenient term to a node id, if possible.

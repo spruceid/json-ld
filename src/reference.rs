@@ -3,7 +3,7 @@ use std::convert::TryFrom;
 use std::borrow::Borrow;
 use iref::{Iri, IriBuf, AsIri};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	BlankId,
 	Lenient,
@@ -166,14 +166,14 @@ impl<T: AsIri> fmt::Debug for Reference<T> {
 /// Types that can be converted into a borrowed node reference.
 ///
 /// This is a convenient trait is used to simplify the use of references.
-/// For instance consider the [`Node::get`](crate::Node::get) method, used to get the objects associated to the
+/// For instance consider the [`Node::get`](crate::json_ld::Node::get) method, used to get the objects associated to the
 /// given reference property for a given node.
 /// It essentially have the following signature:
 /// ```ignore
 /// fn get(&self, id: &Reference<T>) -> Objects;
 /// ```
-/// However building a `Refrence` by hand can be tedious, especilly while using [`Lexicon`](crate::Lexicon) and
-/// [`Vocab`](crate::Vocab). It can be as verbose as `node.get(&Reference::Id(Lexicon::Id(MyVocab::Term)))`.
+/// However building a `Refrence` by hand can be tedious, especilly while using [`Lexicon`](crate::json_ld::Lexicon) and
+/// [`Vocab`](crate::json_ld::Vocab). It can be as verbose as `node.get(&Reference::Id(Lexicon::Id(MyVocab::Term)))`.
 /// Thanks to `ToReference` which is implemented by `Lexicon<V>` for any type `V` implementing `Vocab`,
 /// it is simplified into `node.get(MyVocab::Term)` (while the first syntax remains correct) where
 /// the signature of `get` becomes:

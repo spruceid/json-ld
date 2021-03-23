@@ -1,6 +1,6 @@
 use iref::{Iri, IriBuf};
 use langtag::LanguageTagBuf;
-use crate::{
+use crate::json_ld::{
 	Nullable,
 	Id,
 	Direction,

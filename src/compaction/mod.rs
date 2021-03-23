@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 use futures::future::{BoxFuture, FutureExt};
 use json::JsonValue;
-use crate::{
+use crate::json_ld::{
 	Id,
 	ContextMut,
 	Indexed,
@@ -54,8 +54,8 @@ impl From<Options> for context::ProcessingOptions {
 	}
 }
 
-impl From<crate::expansion::Options> for Options {
-	fn from(options: crate::expansion::Options) -> Options {
+impl From<crate::json_ld::expansion::Options> for Options {
+	fn from(options: crate::json_ld::expansion::Options) -> Options {
 		Options {
 			processing_mode: options.processing_mode,
 			ordered: options.ordered,
@@ -201,7 +201,7 @@ fn add_value(map: &mut json::object::Object, key: &str, value: JsonValue, as_arr
 
 /// Get the `@value` field of a value object.
 fn value_value<T: Id>(value: &Value<T>) -> JsonValue {
-	use crate::object::value::Literal;
+	use crate::json_ld::object::value::Literal;
 	match value {
 		Value::Literal(lit, _ty) => {
 			match lit {
