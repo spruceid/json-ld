@@ -1,7 +1,9 @@
+/*
 #[macro_use]
 extern crate log;
 extern crate json;
 extern crate iref;
+*/
 
 mod mode;
 mod error;
