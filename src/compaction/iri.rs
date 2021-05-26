@@ -92,6 +92,7 @@ pub(crate) fn compact_iri_full<'a, T: 'a + Id, C: Context<T>, V: ToLenientTerm<T
 							let mut common_type = None;
 							let mut common_lang_dir = None;
 
+							#[allow(unused)]
 							if list.is_empty() {
 								common_lang_dir = Some(Nullable::Some((active_context.default_language(), active_context.default_base_direction())))
 							} else {
